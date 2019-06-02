@@ -12,10 +12,16 @@ Describe "$($env:repoName)-Manifest" {
         }
 
         Import-Module .\$($env:repoName).psd1 -ErrorAction SilentlyContinue
-        $command = Get-Command $($env:repoName) -ErrorAction SilentlyContinue
+        $Module = Get-Module $($env:repoName) -ErrorAction SilentlyContinue
 
         It "Should have the $($env:repoName) function available" {
             $command | Should not BeNullOrEmpty
+        }
+
+        'VMNetworkAdapterTeamMapping', 'VMNetworkAdapterSettings', 'VMNetworkAdapterIsolation' | ForEach-Object {
+            It "Should have exported the DSC Resource: $_" {
+                $_ -in (Get-Module VMNetworkAdapter).ExportedDSCResources | Should Be $true
+            }
         }
     }
 }
