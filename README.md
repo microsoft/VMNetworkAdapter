@@ -1,6 +1,8 @@
-# Data Center Bridging
+[![Build status](https://ci.appveyor.com/api/projects/status/e6w4rg0ydmub6jfe?svg=true)](https://ci.appveyor.com/project/MSFTCoreNet/vmnetworkadapter)
 
-DSC PowerShell module intended to deploy virtual NIC settings using https://aka.ms/Validate-DCB
+# Description
+
+DSC PowerShell module intended to deploy settings for a virtual NIC using https://aka.ms/Validate-DCB
 
 ## :star: More by the Microsoft Core Networking team
 
